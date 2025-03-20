@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <style>
+        body{
+            background-color: #228cdc;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .required:after {
+        content:"*";
+        color: red;
+        }
+        fieldset{
+            padding: 50px;
+            margin: auto;
+            font-size: 20px;
+            background-color: #f9f9f9;
+            font-family: 'Times New Roman', Times, serif;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h2{
+            text-align: center;
+            color: #04146e;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .add{
+            width: 100%;
+            display: flex;
+            justify-content:left;  
+        }
+        form {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .buton{        
+            padding: 10px 15px;
+            margin: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .buton:hover {
+            background-color: #5693ee;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            width: 99%;
+            position:  absolute; bottom:0px;
+        }
+    </style>
+</head>
+<body><h2><u>LOGIN FORM</u></h2>
+    <form method="post" onsubmit="return validateForm()">
+        <fieldset>
+            <pre><label class="required">Roll no.</label>           :<input type="text" required></pre>
+            <pre><label class="required">Email ID.</label>          :<input type="text" required></pre>
+            <pre><label class="required">Password.</label>          :<input type="password" required></pre>
+    <hr>                      
+    <div><pre><a href="registration.html" target="main" class="buton">Sign Up</a>                     <a href="home.html" target="main" class="buton">Login</a></pre></div>
+    <hr>
+    <pre>            <button class="buton" style="font-size: x-large;">Login with Google</button></pre>
+    </fieldset>
+    </form>
+    <footer>
+        <p>&copy; 2025 Smart Campus Solutions. All rights reserved.</p>
+    </footer>
+    <script>
+        function validateForm() {
+            var rollNo = document.getElementById('rollNo').value;
+            var email = document.getElementById('email').value;
+
+            if (!rollNo || !email ) {
+                alert('Please fill in all the required fields.');
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <style>
+        body{
+            background-color: #228cdc;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        pre {
+            font-family: 'Times New Roman', Times, serif, monospace;
+        }
+        .required:after {
+            content: "*";
+            color: red;
+        }
+        fieldset{
+            padding: 50px;
+            margin: auto;
+            font-size: 20px;
+            background-color: #f9f9f9;
+            font-family: 'Times New Roman', Times, serif;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h2 {
+            text-align: center;
+            color: #04146e;
+            font-family: 'Times New Roman', Times, serif, monospace;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        label {
+            margin-right: 5px;
+        }
+        select {
+            padding: 5px;
+            font-size: 16px;
+            margin-top: 2px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .buton {
+            padding: 10px 15px;
+            margin: 5px;
+            background-color: blueviolet;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .buton:hover {
+            background-color: #5693ee;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            width: 99%;
+            position:  absolute; bottom:0px;
+        }
+    </style>
+</head>
+<body>
+    <h2><u>SIGN-UP FORM</u></h2>
+    <form method="post" onsubmit="return validateForm()">
+        <fieldset>
+            <pre><label>Name     </label>                     :<input type="text" id="name" required></pre>
+            <pre><label>Roll no. </label>                      :<input type="text" id="rollNo" required></pre>
+            <pre><label>Email ID.</label>                    :<input type="text" id="email" required></pre>
+            <pre><label>Phone No.</label>                   :<input type="number" id="phoneNo" required></pre>
+            <pre><label>Enter Password.   </label>       :<input type="password" id="password" required></pre>
+            <pre><label>Re-Enter Password.</label>    :<input type="password" id="rePassword" required></pre>
+            <pre>Gender               :<input type="radio" id="male" name="Sex" value="male"><label for="male">Male</label><input type="radio" id="female" name="Sex" value="female"><label for="female">Female</label></pre>
+            
+            <label class="required">Course               :</label><select id="Course" name="branch">
+                <option value="b">B.Tech</option>
+                <option value="m">M.Tech</option>
+                <option value="ma">MCA</option>
+</select>        
+<label class="required">Branch               :</label><select id="branch" name="branch">
+                <option value="1">CSE</option>
+                <option value="2">CSE - AIDS</option>
+                <option value="3">ECE</option>
+                <option value="4">ECE - VLSI</option>
+                <option value="5">EEE</option>
+                <option value="6">MNC</option>
+                <option value="7">Civil</option>
+                <option value="8">MME</option>
+                <option value="9">BioT</option>
+                <option value="10">PHY</option>
+                <option value="11">CHE</option>
+                <option value="12">Maths</option>
+              </select>
+<label class="required">Year of study        :</label><select id="year" name="year">
+                <option value="1y">1</option>
+                <option value="2y">2</option>
+                <option value="3y">3</option>
+                <option value="4y">4</option>
+                <option value="5y">5</option>
+              </select>
+            <div>
+                <input type="reset" class="buton"> 
+                <input type="submit" class="buton" style="float: right;">
+            </div>
+        </fieldset>
+    </form>
+    <footer>
+        <p>&copy; 2025 Smart Campus Solutions. All rights reserved.</p>
+    </footer>
+    <script>
+        function validateForm() {
+            var name = document.getElementById('name').value;
+            var rollNo = document.getElementById('rollNo').value;
+            var email = document.getElementById('email').value;
+            var phoneNo = document.getElementById('phoneNo').value;
+            var password = document.getElementById('password').value;
+            var rePassword = document.getElementById('rePassword').value;
+            var gender = document.querySelector('input[name="Sex"]:checked');
+            var course = document.getElementById('course').value;
+            var branch = document.getElementById('branch').value;
+            var year = document.getElementById('year').value;
+
+            if (!name || !rollNo || !email || !phoneNo || !password || !rePassword || !gender || !course || !branch || !year) {
+                alert('Please fill in all the required fields.');
+                return false;
+            }
+            if (password !== rePassword) {
+                alert('Passwords do not match.');
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>

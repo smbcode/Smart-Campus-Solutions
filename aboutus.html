@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>about us</title>
+    <style>
+        h1 {
+            color: #FFEB3B;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .happy {
+            width: 1200px;
+            margin: auto;
+            font-family: 'Arial', sans-serif;
+            font-size: xx-large;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: #043776;
+            color: white;
+            border-radius: 8px;
+            padding: 10px;
+        }
+
+        input {
+            width: 80%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            border: 1px solid #B0BEC5;
+            background-color: #F4F6F9;
+            color: #333;
+            font-size: 1rem;
+        }
+
+        input:focus {
+            border-color: #FFEB3B;
+            outline: none;
+            background-color: #FFFFFF;
+        }
+
+        button {
+            padding: 12px 18px;
+            margin: 10px;
+            background-color: #8E24AA;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        button:hover {
+            background-color: #7b1fa2;
+        }
+        button:focus {
+            outline: 3px solid #FFEB3B;
+        }
+        #todo-list {
+            list-style-type: none;
+            margin-top: 20px;
+        }
+
+        li {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px;
+            box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.1);
+            color: whitesmoke;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            width: 99%;
+            padding: 4px;
+        }
+    </style>
+</head>
+
+<body style="background-color: #228cdc;"">
+    <h1 style="font-size: xxx-large;">Smart Campus Solution : About us</h1>
+    <div class="happy">
+        <h1>Welcome to "Smart Campus Solution"</h1>
+        A platform designed to bridge the gap between students and college management.
+        Our mission is simple: to provide a voice for students and highlight the challenges they encounter in their
+        academic journey.
+        Our Purpose:
+
+        At "Smart Campus Solution", we aim to bring attention to the everyday issues faced by students on campus and
+        create a platform for constructive dialogue with the college administration. We believe that students should
+        have a direct channel to express their concerns, from administrative delays to campus facilities, academic
+        difficulties, and much more. By presenting these problems in a structured manner, we hope to facilitate a
+        positive change and create an environment where both students and management can work together to improve the
+        overall college experience.
+    </div>
+    <br>
+    <div class="happy">
+        <h1>Why we Exist</h1>
+        Unmet Needs: From outdated resources in classrooms to inadequate facilities, students often struggle with issues
+        that hinder their academic success. We aim to make these concerns visible and work with management to find
+        solutions.
+        Communication Gap: Many students feel unheard, as they lack the proper medium to express their grievances. We
+        provide a space where their voices can be heard and taken seriously by the administration.
+        Improvement and Growth: We believe that colleges can be places of continuous improvement. By shedding light on
+        the challenges students face, we contribute to the collective effort of building a better, more supportive
+        academic environment
+    </div>
+    <br>
+    <div class="happy">
+        <h1>Our Vision:</h1>
+        To create a college experience where students' voices are not just heard but actively listened to, with
+        actionable outcomes. We hope to collaborate with college management to resolve long-standing issues and
+        introduce new initiatives that benefit the entire student body.
+        We are committed to transparency, collaboration, and advocacy for student welfare. Together, we can pave the way
+        for a more efficient and nurturing educational environment.
+    </div>
+    <br>
+    <div class="happy">
+        <h1>Enter your Review</h1>
+        <input type="text" id="itemInput" placeholder="Enter a Comment" />
+        <button id="addItemBtn">Add Comment</button>
+
+        <h2>Comments</h2>
+
+        <ul id="todoList"></ul>
+    </div>
+    <script src="taskmaneger.js"></script>
+    <footer>
+        <p>&copy; 2025 Smart Campus Solutions. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
