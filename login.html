@@ -60,15 +60,17 @@
     </style>
 </head>
 <body><h2><u>LOGIN FORM</u></h2>
-    <form method="post" onsubmit="return validateForm()">
+    <form method="post" id="loginForm" onsubmit="return validateForm()">
         <fieldset>
-            <pre><label class="required">Roll no.</label>           :<input type="text" required></pre>
-            <pre><label class="required">Email ID.</label>          :<input type="text" required></pre>
+            <pre><label class="required">Roll no.</label>           :<input type="text" id="rollNo" required></pre>
+            <pre><label class="required">Email ID.</label>          :<input type="text" id="email" required></pre>
             <pre><label class="required">Password.</label>          :<input type="password" required></pre>
-    <hr>                      
-    <div><pre><a href="registration.html" target="main" class="buton">Sign Up</a>                     <a href="home.html" target="main" class="buton">Login</a></pre></div>
+    <hr>                       
+    <div>
+    <pre><a href="registration.html" target="main" class="buton">Sign Up</a>                    <button type="button" onclick="handleLogin()" class="buton" style="font-size: x-large;">Login</button></pre>
+    </div>
     <hr>
-    <pre>            <button class="buton" style="font-size: x-large;">Login with Google</button></pre>
+    <pre>        <button class="buton" style="font-size: x-large;">Login with Google</button></pre>
     </fieldset>
     </form>
     <footer>
@@ -79,11 +81,17 @@
             var rollNo = document.getElementById('rollNo').value;
             var email = document.getElementById('email').value;
 
-            if (!rollNo || !email ) {
+            if (!rollNo || !email) {
                 alert('Please fill in all the required fields.');
                 return false;
             }
             return true;
+        }
+
+        function handleLogin() {
+            if (validateForm()) {
+                window.location.href = "home.html";
+            }
         }
     </script>
 </body>
