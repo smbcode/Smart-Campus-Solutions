@@ -3,7 +3,7 @@
 <head>
     <title>Registration Form</title>
     <style>
-        body{
+        body {
             background-color: #228cdc;
             font-family: 'Times New Roman', Times, serif;
         }
@@ -14,7 +14,7 @@
             content: "*";
             color: red;
         }
-        fieldset{
+        fieldset {
             padding: 50px;
             margin: auto;
             font-size: 20px;
@@ -65,7 +65,7 @@
 </head>
 <body>
     <h2><u>SIGN-UP FORM</u></h2>
-    <form method="post" onsubmit="return validateForm()">
+    <form method="post" onsubmit="return handleLogin(event)">
         <fieldset>
             <pre><label>Name     </label>                     :<input type="text" id="name" required></pre>
             <pre><label>Roll no. </label>                      :<input type="text" id="rollNo" required></pre>
@@ -75,12 +75,13 @@
             <pre><label>Re-Enter Password.</label>    :<input type="password" id="rePassword" required></pre>
             <pre>Gender               :<input type="radio" id="male" name="Sex" value="male"><label for="male">Male</label><input type="radio" id="female" name="Sex" value="female"><label for="female">Female</label></pre>
             
-            <label class="required">Course               :</label><select id="Course" name="branch">
+            <label class="required">Course               :</label><select id="Course" name="course">
                 <option value="b">B.Tech</option>
                 <option value="m">M.Tech</option>
                 <option value="ma">MCA</option>
-</select>        
-<label class="required">Branch               :</label><select id="branch" name="branch">
+            </select>        
+            
+            <label class="required">Branch               :</label><select id="branch" name="branch">
                 <option value="1">CSE</option>
                 <option value="2">CSE - AIDS</option>
                 <option value="3">ECE</option>
@@ -93,14 +94,16 @@
                 <option value="10">PHY</option>
                 <option value="11">CHE</option>
                 <option value="12">Maths</option>
-              </select>
-<label class="required">Year of study        :</label><select id="year" name="year">
+            </select>
+            
+            <label class="required">Year of study        :</label><select id="year" name="year">
                 <option value="1y">1</option>
                 <option value="2y">2</option>
                 <option value="3y">3</option>
                 <option value="4y">4</option>
                 <option value="5y">5</option>
-              </select>
+            </select>
+            
             <div>
                 <input type="reset" class="buton"> 
                 <input type="submit" class="buton" style="float: right;">
@@ -119,7 +122,7 @@
             var password = document.getElementById('password').value;
             var rePassword = document.getElementById('rePassword').value;
             var gender = document.querySelector('input[name="Sex"]:checked');
-            var course = document.getElementById('course').value;
+            var course = document.getElementById('Course').value;
             var branch = document.getElementById('branch').value;
             var year = document.getElementById('year').value;
 
@@ -127,11 +130,22 @@
                 alert('Please fill in all the required fields.');
                 return false;
             }
+
             if (password !== rePassword) {
                 alert('Passwords do not match.');
                 return false;
             }
+
             return true;
+        }
+
+        function handleLogin(event) {
+            event.preventDefault();
+
+            // Validate form data
+            if (validateForm()) {
+                window.location.href = "login.html";
+            }
         }
     </script>
 </body>
